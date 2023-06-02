@@ -2,7 +2,7 @@
 
 Projeto desenvolvido para disciplina SSC0130 - Engenharia de Software.
 
-Esse repositório contém o servidor do app.
+Esse repositório contém o front-end do app.
 
 [Repositório do back-end.](https://github.com/verardino/mosquito-finder-server)
 
@@ -20,4 +20,6 @@ Aplicativo web reativo para que a comunidade participe da identificação e noti
 **O link do documento de plano de projeto está no drive.**
 
 Clique [aqui](https://drive.google.com/drive/folders/1lynzmbTl1w2h5wqSLcMebcKa_uTbZa51?usp=sharing) para acessar o drive com mais informações.
+
+Clique [aqui](https://www.figma.com/file/FkDJ11LM7lZhgVnSpVY9bp/App?type=design&node-id=0%3A1&t=LAzlWfmENe4g94Ob-1) para acessar o protótipo das telas no Figma.
 
