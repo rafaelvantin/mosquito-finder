@@ -13,7 +13,7 @@ const NewReport = ({navigation}) => {
         <View style={styles.container}>
             <Text style={styles.title}>Título da Imagem</Text>
             <Image
-                source={require('./agua-parada.jpeg')} // Coloque o caminho para a imagem desejada
+                source={require('../../assets/agua-parada.jpeg')} // Coloque o caminho para a imagem desejada
                 style={styles.image}
             />
             <TextInput
