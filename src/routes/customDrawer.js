@@ -13,10 +13,10 @@ const CustomDrawer = props => {
                 contentContainerStyle={{ backgroundColor: '#877b66' }}>
                 <ImageBackground
                     style={{ padding: 20, backgroundColor: '#877b66' }}>
-                    <Image
+                    {/* <Image
                         source={require('../../assets/logo.png')}
                         style={{ height: 100, width: 100, borderRadius: 80, marginBottom: 10 }}
-                    />
+                    /> */}
                     <Text
                         style={{
                             color: '#fff',
