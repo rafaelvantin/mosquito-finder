@@ -12,6 +12,7 @@ Esse repositório contém o front-end do app.
 *  **Matheus Giraldi Alvarenga** - 12543669
 *  **Rafael Sartori Vantin** - 12543353
 *  **Renato Tadeu Theodoro Junior** - 11796750
+*  **João Pedro Duarte Nunes** - 12542460
 
 ## Introdução
 
