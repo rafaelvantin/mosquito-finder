@@ -4,8 +4,6 @@ import { UserStorage } from './store/userContext.js';
 
 import Routes from './routes/index.js';
 
-// import { View, Text } from 'react-native';
-
 import './config/StatusBar';
 
 const App = () => {
@@ -17,12 +15,5 @@ const App = () => {
         </NavigationContainer>
     );
 }
-// const App = () => {
-//     return (
-//         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-//             <Text>Login</Text>            
-//         </View>
-//     );
-// }
 
 export default App;

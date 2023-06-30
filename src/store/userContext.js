@@ -28,7 +28,7 @@ export const UserStorage = ({ children }) => {
 
     setUser("");
     //Comment this next line to test login screen
-    setUser("Test_user");
+    // setUser("Test_user");
   }, []);
 
   const fetchUserInfo = async (id) => {

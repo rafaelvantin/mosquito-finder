@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { View, Text, ImageBackground, Image, TouchableOpacity } from 'react-native'
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer'
+import { UserContext } from '../store/userContext.js';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const CustomDrawer = props => {
+    const { logout } = useContext(UserContext);
+
     return (
         <View style={{ flex: 1 }}>
             <DrawerContentScrollView
@@ -32,7 +35,7 @@ const CustomDrawer = props => {
                 </View>
             </DrawerContentScrollView>
             <View style={{ padding: 20, borderTopWidth: 1, borderTopColor: '#ccc' }}>
-                <TouchableOpacity onPress={() => { }} style={{ paddingVertical: 15 }}>
+                <TouchableOpacity onPress={() => logout()} style={{ paddingVertical: 15 }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <Ionicons name="exit-outline" size={22} />
                         <Text

@@ -9,12 +9,18 @@ const getUserInfo = (id) => {
     });
 };
 
-const authenticate = (email, password) => {
+const authenticate = (email, password) => {  
   return new Promise((resolve, reject) => {
-    $api
-      .get(`/auth`, { params: { email, password } })
-      .catch((error) => reject(error))
-      .then(({ data }) => resolve(data));
+
+    if(email == 'client@client.com')
+      resolve({id: "10", name: "Client" });
+    if(email == 'secretaria@secretaria.com')
+      resolve({id: "20", name: "Client" });
+
+    // $api
+    //   .get(`/auth`, { params: { email, password } })
+    //   .catch((error) => reject(error))
+    //   .then(({ data }) => resolve(data));
   });
 };
 
