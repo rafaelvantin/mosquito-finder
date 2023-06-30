@@ -1,8 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { View, Text, TouchableHighlight, TextInput, StyleSheet } from 'react-native';
 
-import { authenticate } from '../services/user';
-
 import { UserContext } from '../store/userContext.js';
 
     
@@ -52,12 +50,24 @@ const styles = StyleSheet.create({
         paddingTop: 70,
         backgroundColor: '#F8F8F8',
     },
+    h1: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        color: '#169C89',
+        marginBottom: 0,
+    },
+    h2: {
+        fontSize: 20,
+        marginBottom: 50,
+        color: '#999999',
+    },
     input: {
         height: 60,
         marginVertical: 12,
         borderWidth: 1,
         paddingLeft: 20,
         borderRadius: 10,
+        borderColor: '#999999',
         backgroundColor: '#F8F8F8',
     },
     button: {
@@ -70,17 +80,6 @@ const styles = StyleSheet.create({
     buttonText: {
         color: '#fff',
         fontSize: 17,
-    },
-    h1: {
-        fontSize: 30,
-        fontWeight: 'bold',
-        color: '#169C89',
-        marginBottom: 0,
-    },
-    h2: {
-        fontSize: 20,
-        marginBottom: 50,
-        color: '#999999',
     },
     signup: {
         marginTop: 25,

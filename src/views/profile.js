@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 32,
         borderRadius: 4,
         elevation: 3,
-        backgroundColor: '#877b66',
+        backgroundColor: '#169C89',
         marginTop: 10,
     },
     text: {

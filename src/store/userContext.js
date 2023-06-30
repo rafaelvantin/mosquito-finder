@@ -10,11 +10,16 @@ export const UserStorage = ({ children }) => {
   const [user, setUser] = useState("");
 
   const login = async (email, password) => {
-    const user_data = await authenticate(email, password);
-
-    if(user_data != undefined) {
-        setUser(user_data.id);
-        await AsyncStorage.setItem("@user", user_data.id);
+    try{
+      const user_data = await authenticate(email, password);
+  
+      if(user_data != undefined) {
+          setUser(user_data.id);
+          await AsyncStorage.setItem("@user", user_data.id);
+      }
+    }
+    catch(error){
+      console.log(error);
     }
   }
 

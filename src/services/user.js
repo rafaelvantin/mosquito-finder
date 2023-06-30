@@ -17,6 +17,7 @@ const authenticate = (email, password) => {
     if(email == 'secretaria@secretaria.com')
       resolve({id: "20", name: "Client" });
 
+    reject({error: "Usuário não encontrado"});
     // $api
     //   .get(`/auth`, { params: { email, password } })
     //   .catch((error) => reject(error))
