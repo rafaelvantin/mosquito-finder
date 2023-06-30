@@ -1,41 +1,23 @@
+import { useContext } from 'react';
 import { View, Text, StyleSheet, TouchableHighlight, Image } from 'react-native';
+
+import { ReportContext } from '../store/reportContext';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 
 const MyReports = ({ navigation }) => {
-    const reports = [
-        {
-            id: 1,
-            image: require('../../assets/arquitetura.jpg'),
-            title: 'Praça Arquitetura',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc blandit lectus non justo elementum, eget varius ipsum posuere. Aenean a metus dictum mi pretium pulvinar vitae vitae dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla lacus dui, porttitor nec dictum nec, ultricies et enim. ',
-            status: 'Em análise',
-            likes: 12,
-            dislikes: 0,
-        },
-        {
-            id: 2,
-            title: 'Saída Matemática',
-            image: require('../../assets/matematica.jpg'),
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc blandit lectus non justo elementum, eget varius ipsum posuere. Aenean a metus dictum mi pretium pulvinar vitae vitae dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla lacus dui, porttitor nec dictum nec, ultricies et enim. ',
-            status: 'Em análise',
-            likes: 5,
-            dislikes: 1,
-        },
-        {
-            id: 3,
-            image: require('../../assets/bandejao.jpg'),
-            title: 'Bandejão',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc blandit lectus non justo elementum, eget varius ipsum posuere. Aenean a metus dictum mi pretium pulvinar vitae vitae dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla lacus dui, porttitor nec dictum nec, ultricies et enim. ',
-            status: 'Em análise',
-            likes: 1,
-            dislikes: 7,
-        }
-    ];
+    
+    const { reports } = useContext(ReportContext);
 
 
     const renderMyReports = () => {
+        if(reports == null || reports.length == 0) {
+            return (
+                <Text>Nenhuma denúncia encontrada.</Text>
+            );
+        }
+
         return reports.map((report) => {
             return (
                 <TouchableHighlight

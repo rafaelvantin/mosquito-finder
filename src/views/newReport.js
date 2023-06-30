@@ -1,19 +1,28 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { View, Text, TouchableHighlight, Image, TextInput, Button, StyleSheet } from 'react-native';
 
-const NewReport = ({navigation}) => {
+import { ReportContext } from '../store/reportContext';
+
+const NewReport = ({navigation, route}) => {
     const [description, setDescription] = useState('');
 
+    const { image } = route.params;
+
+    const { addReport } = useContext(ReportContext);
+
     const handleSend = () => {
-        // Lógica para enviar a descrição da imagem
-        console.log('Descrição:', description);
+        addReport({
+          description: description,
+        })
+        navigation.navigate('Main');
     };
 
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Título da Imagem</Text>
             <Image
-                source={require('../../assets/agua-parada.jpeg')} // Coloque o caminho para a imagem desejada
+                // source={require('../../assets/agua-parada.jpeg')} // Coloque o caminho para a imagem desejada
+                source={{uri: `data:image/jpeg;base64,${image}`}}
                 style={styles.image}
             />
             <TextInput
@@ -27,11 +36,8 @@ const NewReport = ({navigation}) => {
                 title="Enviar"
                 onPress={handleSend}
                 style={styles.button}
-                color="#FF0000" // Altere a cor do botão conforme necessário
+                color="#169C89" // Altere a cor do botão conforme necessário
             />
-            <TouchableHighlight onPress={() => navigation.navigate('Main')}>
-                <Text>Add</Text>
-            </TouchableHighlight>
         </View>
     );
 }

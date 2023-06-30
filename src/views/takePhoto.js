@@ -3,7 +3,7 @@ import { View, Image, Button, StyleSheet, Text } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as FileSystem from 'expo-file-system';
 
-const TakePhoto = () => {
+const TakePhoto = ({ navigation }) => {
     const [image, setImage] = useState(null);
     const [base64Image, setBase64Image] = useState(null);
 
@@ -61,16 +61,14 @@ const TakePhoto = () => {
             encoding: FileSystem.EncodingType.Base64,
         });
         setBase64Image(base64Image);
+        navigation.navigate('NewReport', { image: base64Image });
     };
 
     return (
         <View style={styles.container}>
-            <Button title="Tirar foto" onPress={takePhotoFromCamera} />
-            <Button title="Escolher foto" onPress={choosePhotoFromLibrary} />
+            <Button style={styles.button} title="Tirar foto" onPress={takePhotoFromCamera} />
+            <Button style={styles.button} title="Escolher foto" onPress={choosePhotoFromLibrary} />
             {image && <Image source={{ uri: image }} style={styles.image} />}
-            {/* {base64Image && (
-                <Text style={styles.base64Text}>{base64Image}</Text>
-            )} */}
         </View>
     );
 };
@@ -86,6 +84,9 @@ const styles = StyleSheet.create({
         height: 200,
         resizeMode: 'cover',
         marginTop: 20,
+    },
+    button : {
+        marginBottom: 20,
     },
     base64Text: {
         marginTop: 10,
