@@ -13,9 +13,9 @@ const authenticate = (email, password) => {
   return new Promise((resolve, reject) => {
 
     if(email == 'client@client.com')
-      resolve({id: "10", name: "Client" });
-    if(email == 'secretaria@secretaria.com')
-      resolve({id: "20", name: "Client" });
+      resolve({id: "10", name: "Client", tipo: "Cliente" });
+    if(email == 'sec@sec.com')
+      resolve({id: "20", name: "Secretaria", tipo: "Secretaria" });
 
     reject({error: "Usuário não encontrado"});
     // $api

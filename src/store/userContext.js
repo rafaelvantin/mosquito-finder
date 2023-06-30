@@ -3,11 +3,21 @@ import React, { createContext, useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { authenticate, getUserInfo } from "../services/user";
+import { set } from "react-native-reanimated";
 
 export const UserContext = createContext([]);
 
 export const UserStorage = ({ children }) => {
   const [user, setUser] = useState("");
+  const [tipo, setTipo] = useState("");
+
+  const checkIsSec = () => {
+    if(tipo == "Secretaria"){
+      return true;
+    }
+
+    return false;
+  }
 
   const login = async (email, password) => {
     try{
@@ -16,6 +26,8 @@ export const UserStorage = ({ children }) => {
       if(user_data != undefined) {
           setUser(user_data.id);
           await AsyncStorage.setItem("@user", user_data.id);
+
+          setTipo(user_data.tipo);
       }
     }
     catch(error){
@@ -32,6 +44,7 @@ export const UserStorage = ({ children }) => {
     // loadStorage();
 
     setUser("");
+    setTipo("");
     //Comment this next line to test login screen
     // setUser("Test_user");
   }, []);
@@ -47,6 +60,7 @@ export const UserStorage = ({ children }) => {
   const logout = async () => {
     await AsyncStorage.removeItem("@user");
     setUser("");
+    setTipo("");
   };
 
   return (
@@ -56,6 +70,7 @@ export const UserStorage = ({ children }) => {
         login,
         logout,
         fetchUserInfo,
+        checkIsSec,
       }}
     >
       {children}

@@ -15,7 +15,6 @@ const HomeScreen = () => {
     return (
         <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Login" component={user ? Drawer : Login} />
-            {/* <Stack.Screen name="Login" component={Login} /> */}
             <Stack.Screen name="SignUp" component={SignUp} />
         </Stack.Navigator>
     );
