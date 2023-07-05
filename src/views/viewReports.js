@@ -1,5 +1,6 @@
 import { useContext } from 'react';
-import { View, Text, StyleSheet, TouchableHighlight, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { Image } from 'expo-image';
 
 import { ReportContext } from '../store/reportContext';
 
@@ -9,7 +10,6 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 const MyReports = ({ navigation }) => {
     
     const { reports } = useContext(ReportContext);
-
 
     const renderMyReports = () => {
         if(reports == null || reports.length == 0) {
@@ -27,7 +27,7 @@ const MyReports = ({ navigation }) => {
                     style={styles.report}
                 >
                     <View style={styles.reportContainer}>
-                        <Image source={report.image} style={styles.reportImage} />
+                        <Image source={report.image} style={styles.reportImage} contentFit='fill' />
                         <View style={styles.reportDescriptionContainer}>
                             <Text style={styles.reportTitle}>{report.title}</Text>
                             <View style={styles.reportLikesContainer}>

@@ -7,7 +7,8 @@ const Stack = createNativeStackNavigator();
 
 const CheckReports = () => {    
     return (
-        <Stack.Navigator initialRouteName="ViewReports" screenOptions={{ headerShown: false }}>
+        <Stack.Navigator initialRouteName="ViewReports" 
+        screenOptions={{ headerShown: false }}>
             <Stack.Screen name="ViewReports" component={ViewReports} />
             <Stack.Screen name="ReportDetails" component={ReportDetails} />
         </Stack.Navigator>
